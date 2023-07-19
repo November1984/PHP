@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d89b4276-334d-491b-ae96-ce683a2353c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/contacts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Card-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Card-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/IMG_20220113_094549_HDR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/IMG_20220114_202331.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Project_img-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Project_img-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Project_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/Top_back_contacts.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/card-1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/cont_form.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/contacts.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/ic_email_24px.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/ic_language_24px.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/images/top_back.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lesson-1/style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@7.4/7.4.33_3/bin/php" />
+  <component name="ProjectId" id="2SByWmraqju9JLn3Tmg1jqE0Avu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d89b4276-334d-491b-ae96-ce683a2353c0" name="Changes" comment="" />
+      <created>1688634305458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688634305458</updated>
+      <workItem from="1688634307170" duration="2783000" />
+      <workItem from="1689257562202" duration="6149000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
