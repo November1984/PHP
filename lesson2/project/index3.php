@@ -3,13 +3,14 @@ do {
     $number = (integer)readline("Укажите число, сударь: ");
 } while ($number <= 0);
 
-    $finger = $number % 9 + (int)($number / 9) % 10;
+  //  $finger = $number % 9 + (int)($number / 9) % 10;
+    $finger = $number % 8;
 
     switch (true) {
-        case ($finger == 1 or $finger == 0)  :
+        case $finger == 1  :
             print "Большой";
             break;
-        case $finger == 2 or $finger == 8 :
+        case $finger == 2 or $finger == 0 :
             print "Указательный";
             break;
         case $finger == 3 or $finger == 7 :

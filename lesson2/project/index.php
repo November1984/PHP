@@ -21,3 +21,13 @@ while (true) {
     }
 }
 echo "Досвидания!";
+
+do {
+    $answer = (string) readline($question);
+    if ($answer == "d") {
+        echo "Угадал!";
+        break;
+    }
+    echo "Не угадал!";
+    break;
+} while (true);
