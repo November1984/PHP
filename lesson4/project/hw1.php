@@ -8,11 +8,17 @@ $anFn = function (int $num): string {
     return $num % 2 ? "$num - нечётное" : "$num - чётное";
 };
 
-for ($i = 0; $i < $arrSize; $i++)
+function randArr(int $arrSize = 5): array 
 {
-    $arr[] = rand(0,100);
+    $result = [];
+    for ($i = 0; $i < $arrSize; $i++)
+    {
+        $result[] = rand(0,100);
+    }
+    return $result;
 }
 
+$arr = randArr();
 $resArr = array_map($anFn, $arr);
 
 print_r($resArr);
