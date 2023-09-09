@@ -32,7 +32,7 @@ foreach ($students as $groupName => $studentName) {
     foreach ($studentName as $name => $studentMark) {
         $avrMarks [$groupName] += $studentMark / count($studentName);
         if ($studentMark < 3) {
-            $laggingStudent[$groupName][] = $name . " оценка {$studentMark}";
+            $laggingStudent[$groupName][$name] =  " оценка {$studentMark}";
         }
 
     }
@@ -40,6 +40,6 @@ foreach ($students as $groupName => $studentName) {
 sort($avrMarks);
 
 echo " \nСреднее количество баллов для лучшей группы '{$groupName}' - 
-{$avrMarks[count($avrMarks)-1]}.\n\n";
+{$avrMarks[count($avrMarks)-1]}." . PHP_EOL . PHP_EOL;
 echo "Следующим студентам необходимо пройти дополнительное обучение:\n";
 print_r($laggingStudent);
