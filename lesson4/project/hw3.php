@@ -2,23 +2,23 @@
 
 function itemSearch(string $item, array $arrItems): bool 
 {
+    $iFind = false;
     foreach ($arrItems as $value) {
         if (is_array($value) ) 
         {
            if (itemSearch($item, $value))
-           return true; 
+           $iFind = true; 
 
         }
         else{
             if ($value == $item) {
-                // echo "$value == $item".PHP_EOL;
-                return true;
+                echo "$value == $item".PHP_EOL;
+                $iFind = true;
             }
         }
     }
-    return false;
+    return ($iFind) ? true : false;
 }
-
 
 $box = [
     [
@@ -58,4 +58,4 @@ $box = [
     ] 
 ];
 
-echo itemSearch('Книга', $box) ? "True" : "False";
+echo itemSearch('Ключ', $box) ? "True" : "False";
