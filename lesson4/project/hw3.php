@@ -2,7 +2,7 @@
 
 function itemSearch(string $item, array $arrItems): bool 
 {
-    $iFind = false;
+    $iFind = false; // Без этой переменной функция найдёт только одну книгу
     foreach ($arrItems as $value) {
         if (is_array($value) ) 
         {
@@ -11,7 +11,7 @@ function itemSearch(string $item, array $arrItems): bool
 
         }
         else{
-            if ($value == $item) {
+            if ($value === $item) {
                 echo "$value == $item".PHP_EOL;
                 $iFind = true;
             }
@@ -58,4 +58,5 @@ $box = [
     ] 
 ];
 
-echo itemSearch('Ключ', $box) ? "True" : "False";
+$key = (string) readline("Введите предмет:".PHP_EOL);
+echo itemSearch($key, $box) ? "True" : "False";

@@ -5,8 +5,10 @@ $resArr=[];
 $arrSize = 8;
 
 $anFn = function (int $num): string {
-    return $num % 2 ? "$num - нечётное" : "$num - чётное";
+    return ($num % 2) ? "$num - нечётное" : "$num - чётное";
 };
+
+$anFn2 = fn($num) => ($num & 1) ? "$num - нечётное" : "$num - чётное";
 
 function randArr(int $arrSize = 5): array 
 {
@@ -20,5 +22,7 @@ function randArr(int $arrSize = 5): array
 
 $arr = randArr();
 $resArr = array_map($anFn, $arr);
+$resArr2 = array_map($anFn2, $arr);
 
 print_r($resArr);
+print_r($resArr2);
