@@ -6,10 +6,13 @@ $arr = randArr();
 
 function arrAnalisys(array $arr): array 
 {
+    $max = max($arr);
+    $min = min($arr);
+    $avg = array_sum($arr) / count($arr);
     return [
-        'max' => max($arr),
-        'min' => min($arr),
-        'avg' => array_sum($arr) / count($arr)
+        'max' => $max,
+        'min' => $min,
+        'avg' => $avg,
     ];
 }
 
