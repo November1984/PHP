@@ -9,6 +9,7 @@ class Task
     private ?int $priority;
     private bool $isDone;
     private string $user;
+    private array $comments = [];
 
     function __construct(string $userName, string $description)
     {
@@ -51,4 +52,11 @@ class Task
     {
         return ($this->isDone) ? "Done" : "Isn't done";
     }
+    function getComments(): array {
+		return $this->comments;
+	}
+	function setComments(string $comment): void 
+    {
+		$this->comments[] = $comment;
+	}
 }
