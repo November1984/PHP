@@ -7,14 +7,14 @@ class User
     private ?string $sex;
     private ?int $age;
     private bool $isActive = true;
-    private string $dateCreated;
-    private array $tasks;
+    private DateTime $dateCreated;
+    // public Task $tasks;
 
     function __construct(string $userName, string $email)
     {
         $this->userName = $userName;
         $this->email = $email;
-        $this->dateCreated = Time::getTime();
+        $this->dateCreated = new DateTime ("now", new DateTimeZone("Europe/Moscow"));
     }
 
     function getUserName(): string
@@ -58,12 +58,12 @@ class User
         $this->isActive = $isActive;
     }
 
-    function addTask($description):void
-    {
-        $this->tasks[] = new Task($this->userName, $description);
-    }
-    function getTasks(): array
-    {
-        return $this->tasks;
-    }
+    // function addTask($description):void
+    // {
+    //     $this->tasks[] = new Task($this, $description);
+    // }
+    // function getTasks(): array
+    // {
+    //     return $this->tasks;
+    // }
 }
