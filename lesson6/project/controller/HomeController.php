@@ -1,7 +1,7 @@
 <?php
 
-var_dump($_GET);
-die;
 
+$userName = $_GET['userName'] ?? null;
 $pageHeader = "Добро пожаловать!";
+
 require_once "view/home.php";
