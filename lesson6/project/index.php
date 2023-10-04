@@ -1,6 +1,6 @@
 <?php
     $teamName = "A";
-    $teamMembers = [
+    $members = [
         "Иванов Иван",
         "Васильев Василий",
         "Кириллов Кирилл",
@@ -16,13 +16,16 @@
 </head>
 <body>
     <h2>Список участников команды "<?=$teamName?>"</h2>
-    <ol>
-        <?php
-            foreach ($teamMembers as $member) :
-                ?>
-                <li><?=$member?></li>
-            <?php endforeach;
-        ?>
-    </ol>
+    <?php
+        function printTeamMembers(array $members): void
+        {
+            echo "<ol>";
+                foreach ($members as $member) {
+                    echo "<li>$member</li>";
+                }
+            echo "</ol>";
+        }
+    ?>
+    <?php printTeamMembers($members);?>
 </body>
 </html>
