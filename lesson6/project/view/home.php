@@ -8,8 +8,14 @@
 <body>
     <h1><?=$pageHeader?></h1>
     <a href="?userName=Господин">Войти ;)</a>
+    <a href="?">Уйти ;)</a>
     <?php if ($userName !== null) : ?>
         <p>Рады вас приветствовать, <?=$userName?></p>
+    <?php else : ?>
+        <form> 
+            <input type="text" name="userName" placeholder="Введите ваше имя" />
+            <input type="submit" value="Отправить">
+        </form>
     <?php endif; ?>
 </body>
 </html>
