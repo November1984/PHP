@@ -12,7 +12,7 @@
     <?php if ($userName !== null) : ?>
         <p>Рады вас приветствовать, <?=$userName?></p>
     <?php else : ?>
-        <form> 
+        <form method="post"> 
             <input type="text" name="userName" placeholder="Введите ваше имя" />
             <input type="submit" value="Отправить">
         </form>

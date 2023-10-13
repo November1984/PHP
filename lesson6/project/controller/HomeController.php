@@ -1,7 +1,7 @@
 <?php
 
 
-$userName = isset($_GET['userName']) && !empty($_GET['userName']) ? $_GET['userName']: null;
+$userName = isset($_POST['userName']) && !empty($_POST['userName']) ? $_POST['userName']: null;
 $pageHeader = "Добро пожаловать!";
 
 require_once "view/home.php";
