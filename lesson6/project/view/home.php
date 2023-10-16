@@ -8,7 +8,7 @@
 <body>
     <h1><?=$pageHeader?></h1>
     <a href="?userName=Господин">Войти ;)</a>
-    <a href="?">Уйти ;)</a>
+    <a href="?action=logout">Уйти ;)</a>
     <?php if ($userName !== null) : ?>
         <p>Рады вас приветствовать, <?=$userName?></p>
     <?php else : ?>
