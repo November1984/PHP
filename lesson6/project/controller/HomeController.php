@@ -16,7 +16,12 @@ elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
     $userName = $_REQUEST['userName'];
    $_SESSION['userName'] =  $userName;
 }
-
+else {
+    $_GET['controller'] = 'security';
+    // header('location: /');
+    // require_once "view/signin.php";
+    // die;
+}
 $pageHeader = "Добро пожаловать!";
 
 require_once "view/home.php";
