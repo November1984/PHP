@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1><?=$pageHeader?></h1>
-    <a href="?userName=Господин">Войти ;)</a>
-    <a href="?action=logout">Уйти ;)</a>
     <?php if ($userName !== null) : ?>
         <p>Рады вас приветствовать, <?=$userName?></p>
-    <?php else : ?>
-        <form method="post"> 
+        <a href="?action=logout">Уйти ;)</a>
+        <?php else : ?>
+            <a href="?userName=Господин">Войти ;)</a>
+            <form method="post"> 
             <input type="text" name="userName" placeholder="Введите ваше имя" />
             <input type="submit" value="Отправить">
         </form>

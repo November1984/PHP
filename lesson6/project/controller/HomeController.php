@@ -6,15 +6,15 @@ $userName = isset($_REQUEST['userName']) && !empty($_REQUEST['userName']) ?
 
 if (isset($_GET['action']) && $_GET['action'] === 'logout'){
     setcookie('userName', null, -1);
-    unset($_COOKIE['userName']);
+    unset($_SESSION['userName']);
 }
-if ($userName !== null) {
-    $expires = time() + 86400;
-    setcookie('userName', $userName, $expires);
+$userName = null;
+if (isset($_SESSION['userName'])){
+    $userName = $_SESSION['userName'];
 }
-if (isset($_COOKIE['userName'])){
-    var_dump($_COOKIE);
-    // die;
+elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
+    $userName = $_REQUEST['userName'];
+   $_SESSION['userName'] =  $userName;
 }
 
 $pageHeader = "Добро пожаловать!";
