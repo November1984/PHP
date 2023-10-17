@@ -10,11 +10,11 @@
             "request": "launch",
             "runtimeArgs": [
                 "-S",
-                "localhost:9000",
+                "localhost:8080",
                 // "-t",
                 // "."
             ],
-            "port": 9000,
+            "port": 8080,
             "serverReadyAction": {
                 "action": "openExternally"
             }
@@ -32,7 +32,8 @@
             "name": "Listen for Xdebug",
             "type": "php",
             "request": "launch",
-            "port": 9000,
+            "cwd": "../lesson6/project/index.php",
+            "port": 8080,
         }
     ]
 }

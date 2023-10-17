@@ -1,6 +1,5 @@
 <?php
 
-
 $userName = isset($_REQUEST['userName']) && !empty($_REQUEST['userName']) ?
             $_REQUEST['userName']: null;
 
@@ -16,12 +15,17 @@ elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
     $userName = $_REQUEST['userName'];
    $_SESSION['userName'] =  $userName;
 }
-else {
-    $_GET['controller'] = 'security';
-    // header('location: /');
-    // require_once "view/signin.php";
-    // die;
+
+if (isset($_SESSION['userName'])) {
+    if (gettype($_SESSION['userName']) === 'string') {
+    $userName = $_SESSION['userName'];
+    }
+    else
+    {
+        $userName = $_SESSION['userName']->getUserName();
+    }
 }
-$pageHeader = "Добро пожаловать!";
+$pageHeader = "Добро пожаловать"; 
+$pageHeader .= empty($userName) ?  "!" : ", $userName!";
 
 require_once "view/home.php";

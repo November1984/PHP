@@ -1,8 +1,17 @@
 <?php
+require_once "model/UserProvider.php";
+require_once 'model/User.php';
 session_start();
 
 $controller = $_GET['controller'] ?? 'home';
 $routes = require 'routes.php';
-require_once $routes[$controller];
+
+if (isset($routes[$controller])) {
+    require_once $routes[$controller];
+}
+else
+{
+    echo "404";
+}
 
 
