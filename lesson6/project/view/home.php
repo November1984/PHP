@@ -9,7 +9,7 @@
     <h1><?=$pageHeader?></h1>
     <?php if ($userName !== null) : ?>
         <p>Рады вас приветствовать, <?=$userName?></p>
-        <a href="?action=logout">Уйти ;)</a>
+        <?php include "menu.php"?>
         <?php else : ?>
             <a href="?userName=Господин">Войти ;)</a>
             <form method="post"> 
