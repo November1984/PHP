@@ -7,7 +7,7 @@
 // session_start();
 $userName = "";
 // Имя может быть задано на странице авторизации
-var_dump($_SESSION);
+// var_dump($_SESSION);
 if (isset($_SESSION['userName'])) {
     if (gettype($_SESSION['userName']) === 'string') {
         $userName = $_SESSION['userName'];
@@ -23,6 +23,7 @@ elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
 }
 
 // Проверка пустого имени и переход на страницу авторизации
-if (!isset($userName) || $userName===""){
-    header('location: /?controller=security');
+if (! isset($userName) || $userName === "") {
+    // var_dump($userName);
+    header('location: /?controller=home');
 }

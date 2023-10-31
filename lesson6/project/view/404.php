@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    404
+    <div><img src="/view/pic404.jpg" alt="Not found..."></div>
 </body>
 </html>

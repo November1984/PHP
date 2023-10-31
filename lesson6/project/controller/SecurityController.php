@@ -29,7 +29,7 @@ if (isset($_POST['userName'], $_POST['password'])){
 
 if (isset($_SESSION['userName'])) {
     //isset($_SESSION) & 
-    // var_dump($_SESSION['userName']);
+    var_dump($_SESSION['userName']);
     header('location: /?controller=home');
 }
 

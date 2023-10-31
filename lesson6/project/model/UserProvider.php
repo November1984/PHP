@@ -8,6 +8,7 @@ class UserProvider
         $accounts = [
             'geek' => 'pass123',
             'gak' => '111',
+            'admin' => '123',
         ];
 
         $expectedPassword = $accounts[$userName] ?? null;
