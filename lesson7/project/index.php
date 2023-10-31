@@ -2,12 +2,8 @@
 
 $pdo = new PDO ("sqlite:database.db");
 
-$query = 'CREATE TABLE `students`(
-            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+$studentName = "Иванов Иван";
+$affectedCount = $pdo->exec("INSERT INTO `students` (`name`) VALUES ('$studentName')");
+var_dump($affectedCount); 
 
-            name VARCHAR (100) NOT NULL
-        )';
 
-$statement = $pdo->query($query);
-
-var_dump($pdo->errorInfo());
