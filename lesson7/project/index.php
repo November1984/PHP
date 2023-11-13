@@ -1,7 +1,9 @@
 <?php
 
 $pdo = new PDO ("sqlite:database.db");//, null, null, [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-
+// var_dump ($pdo);
+// $statement = $pdo->query("SELECT * FROM `students`");
+// var_dump ($statement->fetchAll());
 // $studentName = "Иванов Иван'";
 // $statement = $pdo->prepare('INSERT INTO `students` (`name`) VALUES (?)'); 
 // $result = $statement->execute((array) [$studentName]);
@@ -97,54 +99,54 @@ $pdo = new PDO ("sqlite:database.db");//, null, null, [PDO::ATTR_DEFAULT_FETCH_M
 
 // Второй вариант, операции с БД выполняет отдельный класс
 
-class Student {
-        private int $id;
-        private string $name;
+// class Student {
+//         private int $id;
+//         private string $name;
     
-        function getId(): int{
-            return $this->id;
-        }
-        function getName(): string{
-            return $this->name;
-        }
-        function setName(string $name){
-            $this->name = $name;
-        }
-    }
-class StudentRepository {
-    private PDO $pdo;
-    function __construct(PDO $pdo) {
-        $this->pdo = $pdo;
-    }
-    function getById(int $studentId): ?Student {
-        $statement = $this->pdo->prepare("SELECT * FROM `students` WHERE `id` = ?");
-        $statement->execute([$studentId]);
-        return $statement->fetchObject(Student::class) ?: null;
-    }
+//         function getId(): int{
+//             return $this->id;
+//         }
+//         function getName(): string{
+//             return $this->name;
+//         }
+//         function setName(string $name){
+//             $this->name = $name;
+//         }
+//     }
+// class StudentRepository {
+//     private PDO $pdo;
+//     function __construct(PDO $pdo) {
+//         $this->pdo = $pdo;
+//     }
+//     function getById(int $studentId): ?Student {
+//         $statement = $this->pdo->prepare("SELECT * FROM `students` WHERE `id` = ?");
+//         $statement->execute([$studentId]);
+//         return $statement->fetchObject(Student::class) ?: null;
+//     }
 
-    function getAll(): array{
-        $result = [];
-        $statement = $this->pdo->query("SELECT * FROM `students`");
-        while ($statement && $student = $statement->fetchObject(Student::class)) {
-            $result[] = $student;
-        }
-        return $result;
-    }
+//     function getAll(): array{
+//         $result = [];
+//         $statement = $this->pdo->query("SELECT * FROM `students`");
+//         while ($statement && $student = $statement->fetchObject(Student::class)) {
+//             $result[] = $student;
+//         }
+//         return $result;
+//     }
 
-    function insert(Student $student): bool {
-        $statement = $this->pdo->prepare("INSERT INTO `students` (`name`) VALUES (?)");
-        return $statement->execute([$student->getName()]);
-    }
-}
+//     function insert(Student $student): bool {
+//         $statement = $this->pdo->prepare("INSERT INTO `students` (`name`) VALUES (?)");
+//         return $statement->execute([$student->getName()]);
+//     }
+// }
 
 
-$repository = new StudentRepository($pdo);
+// $repository = new StudentRepository($pdo);
 
-$student = $repository->getById(1);
-print_r($student);
-$allStudents = $repository->getAll();
-print_r($allStudents);
+// $student = $repository->getById(1);
+// print_r($student);
+// $allStudents = $repository->getAll();
+// print_r($allStudents);
 
-$newStudent = new Student();
-$newStudent->setName("Nikol");
-$repository->insert($newStudent);
+// $newStudent = new Student();
+// $newStudent->setName("Nikol");
+// $repository->insert($newStudent);
