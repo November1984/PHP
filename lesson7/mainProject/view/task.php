@@ -6,11 +6,14 @@
     <title>Список делоф</title>
 </head>
 <body>
+    <h2>Привет<?php (isset($userName)&&(bool)$userName ) ? print(", $userName!")
+                     : print("!")?></h2>
     <?php include "menu.php"?>
     <form method="post">
         <input type="text" name="newTask" placeholder="Какова задача?">
         <input type="submit" value="Добавить">
     </form>
+    <?php if (isset($undoneTasks)) {?>
     <ul>
     <?php foreach($undoneTasks as $task) {?>
             <li><?php 
@@ -24,5 +27,6 @@
         </li>
         <?php }?>
     </ul>
+    <?php }?>
 </body>
 </html>

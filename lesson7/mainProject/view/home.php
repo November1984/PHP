@@ -14,10 +14,6 @@
         <?php include "menu.php" ?>
     <?php else : ?>
         <a href="/?controller=security">Войти ;)</a>
-        <!-- <form method="post">
-            <input type="text" name="userName" placeholder="Введите ваше имя" />
-            <input type="submit" value="Отправить">
-        </form> -->
     <?php endif; ?>
 </body>
 

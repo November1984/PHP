@@ -15,6 +15,6 @@ class User
         $this -> login = $login;
     }
     public function getLogin(): string{
-        return $this -> login;
+        return $this -> login ?? "not set";
     }
 }
