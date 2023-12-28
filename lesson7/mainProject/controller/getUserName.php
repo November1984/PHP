@@ -11,6 +11,7 @@ if (isset($_SESSION['userName'])) {
     else
     {
         $userName = $_SESSION['userName']->getUserName();
+        $userLogin = $_SESSION['userName']->getLogin();
     }
 } // или на главной странице, тогда сохраняем в сессию
 elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {

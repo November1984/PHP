@@ -3,9 +3,10 @@ class User
 {
     private string $userName;
     private string $login;
-    public function __construct(string $userName)
+    public function __construct(string $userName, string $login)
     {
         $this -> userName = $userName;
+        $this -> login = $login;
     }
     public function getUserName(): string
     {

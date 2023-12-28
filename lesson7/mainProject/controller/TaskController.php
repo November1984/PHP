@@ -7,7 +7,7 @@ $taskProvider = new TaskProvider($pdo);
 
 // Добавлена новая задача
 if(isset($_POST["newTask"])){
-    $taskProvider->addTask($userName, $_POST["newTask"]);
+    $taskProvider->addTask($userLogin, $_POST["newTask"]);
     unset($_POST["newTask"]);
 }
 
@@ -21,12 +21,8 @@ if (isset($_GET["taskID"])){
 
 // Выгрузка списка задач
 // Если список пуст, то возвращает строку
-$undoneTasks = $taskProvider->getUndoneTasksCount($userName) > 0 ?
-     $taskProvider->getUndoneList($userName) // Массив строк
+$undoneTasks = $taskProvider->getUndoneTasksCount($userLogin) > 0 ?
+     $taskProvider->getUndoneList($userLogin) // Массив строк
 : ["Список задач пуст"];
-/*
-Добавить  в TaskProvider метод setIsDone, чтобы отмечать таски как сделанные и убирать их из списка
-либо в $undoneTasks клалсть объекты 
- */
 
 require_once "view/task.php";
