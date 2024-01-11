@@ -2,7 +2,9 @@
 
 include "getUserName.php";
 
-$pdo = require"db.php";
+if (!isset($userLogin)) header ("location: /");
+
+$pdo = require "db.php";
 $taskProvider = new TaskProvider($pdo);
 
 // Добавлена новая задача
