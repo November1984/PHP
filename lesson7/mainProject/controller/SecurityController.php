@@ -2,7 +2,7 @@
 
 // Если нажата кнопка "Выйти"
 if (isset($_GET['action']) && $_GET['action'] === 'logout'){
-    setcookie('userName', null, -1);
+    setcookie('userName', null, -1); //, '/; samesite=none'
     unset($_SESSION['userName']);
 }
 

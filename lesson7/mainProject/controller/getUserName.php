@@ -23,3 +23,7 @@ elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
 if (! isset($userName) || $userName === "") {
     header('location: /?controller=home&userName=Smbd');
 }
+
+
+/*В каких случаях $_SESSION['userName'] равен строке? На сколько эти случаи нужны?
+Может хрен с ними?*/
