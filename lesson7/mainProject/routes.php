@@ -5,4 +5,5 @@ return [
     'security' => 'controller/SecurityController.php',
     'second' => 'controller/SecondController.php',
     'tasks' => 'controller/TaskController.php',
+    'registration' => 'controller/RegController.php',
 ];

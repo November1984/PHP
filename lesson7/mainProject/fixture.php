@@ -18,7 +18,7 @@ $pdo -> exec ('CREATE TABLE tasks (
                 isDone      TINYINT NOT NULL,
                 userName    VARCHAR(255) NOT NULL
                 )
-            ');
+            '); //userName = login - замени как-нибудь =)
 
 // $pdo -> exec ('ALTER TABLE tasks
 //                 ADD userName VARCHAR(255) NOT NULL

@@ -4,10 +4,13 @@ Class Task {
     private int $taskID;
     private bool $isDone = false;
     private string $description;
+    private string $ownerName;
 
-    function __construct(string $userName, string $description){
+    function __construct(string $userName, string $description, int $taskID=0){
         $this->description = $description;
-        $this->taskID = TaskProvider::getTasksCount($userName);
+        $this->ownerName = $userName;
+        $this->taskID = $taskID;
+        // $this->taskID = TaskProvider::getTasksCount($userName);
         // $this->isDone = false;
     }
 
@@ -23,4 +26,7 @@ Class Task {
 	public function getTaskID(): int {
 		return $this->taskID;
 	}
+    public function setTaskID(int $taskID) {
+        $this->taskID = $taskID;
+    }
 }

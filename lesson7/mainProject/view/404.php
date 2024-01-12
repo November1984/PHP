@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div><img src="/view/pic404.jpg" alt="Not found..."></div>
+    <div><img src="view/abc.jpg" alt="Not found..."></div>
 </body>
 </html>

@@ -2,23 +2,29 @@
 
 include "getUserName.php";
 
-$pdo = require"db.php";
+if (!isset($userLogin)) header ("location: /");
+
+$pdo = require "db.php";
 $taskProvider = new TaskProvider($pdo);
 
+// Добавлена новая задача
 if(isset($_POST["newTask"])){
-    $taskProvider->addTask($userName, $_POST["newTask"]);
-
-    // TaskProvider::addTask($userName, $_POST["newTask"], TaskProvider::getTasksCount($userName));
+    $taskProvider->addTask($userLogin, $_POST["newTask"]);
     unset($_POST["newTask"]);
 }
-$undoneTasks = $taskProvider->getUndoneTasksCount($userName) > 0 ?
-     $taskProvider->getUndoneList($userName)
-: ["Список задач пуст"];
-var_dump($undoneTasks);
+
+
+// Отметка о готовности задачи
 if (isset($_GET["taskID"])){
-    $_SESSION[$userName]["tasks"][$_GET["taskID"]]->setIsDone();
+    $taskProvider->setTaskAsDone($_GET['taskID']);
+    //    var_dump ($undoneTasks[$_GET["taskID"]]);//["tasks"][$_GET["taskID"]]->setIsDone();
     unset($_GET["taskID"]);
 }
-// if (isset($_SESSION[$userName])){
-// print_r($_SESSION[$userName]);}
+
+// Выгрузка списка задач
+// Если список пуст, то возвращает строку
+$undoneTasks = $taskProvider->getUndoneTasksCount($userLogin) > 0 ?
+     $taskProvider->getUndoneList($userLogin) // Массив строк
+: ["Список задач пуст"];
+
 require_once "view/task.php";

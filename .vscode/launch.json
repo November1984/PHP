@@ -14,7 +14,8 @@
                 // "-t",
                 // "."
             ],
-            "port": 8080,
+            "port": 8083,
+            "cwd": "${workspaceRoot}/lesson7/mainProject",
             "serverReadyAction": {
                 "action": "openExternally"
             }
@@ -32,7 +33,7 @@
             "name": "Listen for Xdebug",
             "type": "php",
             "request": "launch",
-            "cwd": "../lesson6/project/index.php",
+            "cwd": "../lesson7/mainProject/index.php",
             "port": 8080,
         }
     ]
