@@ -25,7 +25,7 @@ class UserProvider
 
         return ($userPass = $statement->fetch()) 
                && password_verify($password, $userPass['password'])
-               ? new User($userName) 
+               ? new User($userPass['userName'], $userPass['login']) 
                : null;
     }
 
