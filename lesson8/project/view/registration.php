@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Авторизация</title>
+    <title>Регистрация</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -29,7 +29,10 @@
     <div class="container text-center">
         <div class="row">
             <form method="post" class="sign-in-form mt-5 mt-md-5 col-lg-4 col-md-5 col-sm-8">
-                <h3>Авторизация</h3>
+                <h3>Регистрация</h3>
+                <?php $error === null ?: 
+                    print "<div class='error alert alert-danger'>{$error}</div>";
+                ?>
                 <label for="login" class="visually-hidden">Логин</label>
                 <input type="text" id="login" name="login" class="form-control mt-3" placeholder="Логин" required="" autofocus="">
                 <label for="userName" class="visually-hidden">Имя пользователя</label>

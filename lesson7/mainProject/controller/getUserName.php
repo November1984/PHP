@@ -23,12 +23,6 @@ elseif(isset($_REQUEST['userName']) && !empty($_REQUEST['userName'])) {
 }
 
 // Проверка пустого имени и переход на страницу авторизации
-<<<<<<< Updated upstream
-// if (! isset($userName) || $userName === "") {
-//     // var_dump($userName);
-//     header('location: /?controller=home');
-// }
-=======
 if (! isset($userName) || $userName === "") {
     header('location: /?controller=home&userName=Smbd');
     die();
@@ -37,4 +31,3 @@ if (! isset($userName) || $userName === "") {
 
 /*В каких случаях $_SESSION['userName'] равен строке? На сколько эти случаи нужны?
 Может хрен с ними?*/
->>>>>>> Stashed changes

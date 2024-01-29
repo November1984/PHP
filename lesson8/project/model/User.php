@@ -1,9 +1,9 @@
 <?php
 class User 
 {
-    private string $userName;
-    private string $login;
-    public function __construct(string $userName, string $login)
+    private ?string $userName;
+    private ?string $login;
+    public function __construct(string $userName=null, string $login=null)
     {
         $this -> userName = $userName;
         $this -> login = $login;

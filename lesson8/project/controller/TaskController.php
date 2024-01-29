@@ -25,6 +25,6 @@ if (isset($_GET["taskID"])){
 // Если список пуст, то возвращает строку
 $undoneTasks = $taskProvider->getUndoneTasksCount($userLogin) > 0 ?
      $taskProvider->getUndoneList($userLogin) // Массив строк
-: ["Список задач пуст"];
+     : ["Список задач пуст"];
 
 require_once "view/task.php";

@@ -7,6 +7,15 @@ class UserProvider
         $this->pdo = $pdo;
     }
     function registerUser(User $user, string $pass): bool {
+        
+        {// смотрю есть ли пользователь с таким логином
+        $statement = $this->pdo->prepare("SELECT * FROM `users` WHERE login LIKE :login");
+        if ($statement->execute(["login" => $user->getLogin()]))
+        {
+            throw new Exception ("Login кем-то занят");
+        }
+        }
+
         $statement = $this->pdo->prepare("INSERT INTO `users` (`login`, `password`, `userName`, `createDate`) 
                                           VALUES (:login, :password, :userName, :date)");
         
@@ -17,10 +26,10 @@ class UserProvider
                              'date' => date("d.m.Y H:m:s")
                              ]);
     }
-    function getUserNameByNameAndPassword (string $userName, string $password): ?User
+    function getUserNameByNameAndPassword (string $userLogin, string $password): ?User
     { // проверяет логин и пароль, возвращает имя пользователя или null
-        $statement = $this->pdo->prepare("SELECT * FROM `users` WHERE login LIKE :userName");
-        $statement->execute(["userName" => $userName]);
+        $statement = $this->pdo->prepare("SELECT * FROM `users` WHERE login LIKE :userLogin");
+        $statement->execute(["userLogin" => $userLogin]);
         // $statement->execute(["userName" => htmlspecialchars(strip_tags($userName))]);
 
         return ($userPass = $statement->fetch()) 

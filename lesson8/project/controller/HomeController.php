@@ -1,7 +1,6 @@
 <?php
 include "getUserName.php";
 
-
 $fun = function(&$userName){
      $userName = "";
      return "!";

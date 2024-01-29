@@ -10,16 +10,17 @@
             "request": "launch",
             "runtimeArgs": [
                 "-S",
-                "localhost:8080",
+                "localhost:9000",
                 // "-t",
                 // "."
             ],
-            "port": 8080,
+            // "port": 8080,
+            "cwd": "${workspaceRoot}/lesson8/project/",
             "serverReadyAction": {
                 "action": "openExternally"
             }
         },
-        {
+/*         {
             "name": "Debug current script in console",
             "type": "php",
             "request": "launch",
@@ -32,8 +33,9 @@
             "name": "Listen for Xdebug",
             "type": "php",
             "request": "launch",
-            "cwd": "../lesson6/project/index.php",
-            "port": 8080,
+            "cwd": "./lesson8/project/index.php",
+            "port": 9000,
+            "hostname": "localhost",
         }
-    ]
+ */    ]
 }

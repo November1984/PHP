@@ -1,15 +1,15 @@
 <?php
 
 Class Task {
-    private int $taskID;
+    private int $id;
     private bool $isDone = false;
-    private string $description;
-    private string $ownerName;
+    private ?string $description;
+    private ?string $userName;
 
-    function __construct(string $userName, string $description, int $taskID=0){
+    function __construct(string $userName=null, string $description=null, int $taskID=0){
         $this->description = $description;
-        $this->ownerName = $userName;
-        $this->taskID = $taskID;
+        $this->userName = $userName;
+        $this->id = $taskID;
         // $this->taskID = TaskProvider::getTasksCount($userName);
         // $this->isDone = false;
     }
@@ -24,9 +24,9 @@ Class Task {
 		return $this->description;
 	}
 	public function getTaskID(): int {
-		return $this->taskID;
+		return $this->id;
 	}
     public function setTaskID(int $taskID) {
-        $this->taskID = $taskID;
+        $this->id = $taskID;
     }
 }

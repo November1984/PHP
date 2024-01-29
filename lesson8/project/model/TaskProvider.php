@@ -16,9 +16,10 @@ Class TaskProvider{
                                         WHERE userName LIKE '$userName'
                                         AND isDone = 0");
         // Что если пользователь изменит имя? -> переделать на userID 
-        while ($arr = $statement->fetch()) { // можно использовать fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROP_LATE, Task::class) //41:49
-            $tasks[] = new Task($userName,$arr["description"], $arr["id"]);
-        }
+        $tasks = $statement->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Task::class);
+        // while ($arr = $statement->fetch()) { // можно использовать fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROP_LATE, Task::class) //41:49
+        //     $tasks[] = new Task($userName,$arr["description"], $arr["id"]);
+        // }
         return $tasks ?? null;
     }
 
@@ -36,9 +37,6 @@ Class TaskProvider{
         }
     }
 
-    static function getTasksCount(string $userName): int {
-        return isset($_SESSION[$userName]["tasks"]) ? count($_SESSION[$userName]["tasks"]) : 0;
-    }
 
 	function getUndoneTasksCount(string $userName): int {
         $statement = $this->pdo->query("SELECT COUNT(*) FROM tasks
