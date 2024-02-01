@@ -17,13 +17,19 @@ if (isset($_POST["userName"])) {
                      htmlspecialchars(strip_tags($_POST["login"])));
                      
     try {
-        $userProvider->registerUser($user, $_POST["password"]);
+        $userProvider->registerUser($user, htmlspecialchars(strip_tags($_POST["password"])));
         $_SESSION["userName"] = $user;
         header("location: /?controller=security");
+    }
+    catch (LengthException $exception)
+    {
+        $error = $exception->getMessage();
     }
     catch (Exception $exception)
     {
         $error = $exception->getMessage();
+        $userLogin = $user->getLogin();
+        $userName = $user->getUserName();
     }
 
 }

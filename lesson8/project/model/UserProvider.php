@@ -8,19 +8,30 @@ class UserProvider
     }
     function registerUser(User $user, string $pass): bool {
         
-        {// смотрю есть ли пользователь с таким логином
-        $statement = $this->pdo->prepare("SELECT * FROM `users` WHERE login LIKE :login");
-        if ($statement->execute(["login" => $user->getLogin()]))
-        {
-            throw new Exception ("Login кем-то занят");
-        }
+        {// проверка иключений
+            // смотрю есть ли пользователь с таким логином
+            $statement = $this->pdo->prepare("SELECT * FROM `users` WHERE login LIKE :login");
+            $login = $user->getLogin();
+            $statement->execute(["login" => $login]);
+            if ($statement->fetch())
+            {
+                throw new Exception ("Login кем-то занят");
+            }
+
+            if (is_numeric($user->getUserName()[0]) ){
+                throw new Exception("Имя не должно начинаться с цифры");
+            }
+
+            if (mb_strlen($login) > 3){
+                throw new LengthException("Логин не должен превышать 3 символа");
+            }
         }
 
         $statement = $this->pdo->prepare("INSERT INTO `users` (`login`, `password`, `userName`, `createDate`) 
                                           VALUES (:login, :password, :userName, :date)");
         
         return $statement->execute([
-                             'login' => $user->getLogin(),
+                             'login' => $login,
                              'password' => password_hash($pass, PASSWORD_DEFAULT),
                              'userName' => $user->getUserName(),
                              'date' => date("d.m.Y H:m:s")

@@ -34,11 +34,11 @@
                     print "<div class='error alert alert-danger'>{$error}</div>";
                 ?>
                 <label for="login" class="visually-hidden">Логин</label>
-                <input type="text" id="login" name="login" class="form-control mt-3" placeholder="Логин" required="" autofocus="">
+                <input type="text" id="login" name="login" class="form-control mt-3" placeholder= "Логин" Value=<?= $userLogin?:""?> required="" autofocus="">
                 <label for="userName" class="visually-hidden">Имя пользователя</label>
-                <input type="text" id="userName" name="userName" class="form-control mt-3" placeholder="Имя пользователя" required="" autofocus="">
+                <input type="text" id="userName" name="userName" class="form-control mt-3" placeholder= "Имя пользователя" Value=<?= $userName?:""?> required="" autofocus="">
                 <label for="password" class="visually-hidden">Пароль</label>
-                <input type="password" id="password" name="password" class="form-control mt-3" placeholder="Пароль" required="">
+                <input type="password" id="password" name="password" class="form-control mt-3" placeholder= "Пароль" required="">
                 <!-- <label for="passwordVerification" class="visually-hidden">Проверка пароля</label>
                 <input type="passwordVerification" id="passwordVerification" name="password" class="form-control" placeholder="Проверка пароля" required=""> -->
                 <button class="w-75 btn btn-lg btn-primary mt-1" type="submit">Зарегистрироваться</button>
