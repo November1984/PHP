@@ -24,17 +24,18 @@ Class TaskProvider{
     }
 
     function addTask(string $userName, string $description) {      
-        if (empty($description))
-        {return;}
-        else{
-            $statement = $this->pdo->prepare("INSERT INTO `tasks` (userName, description, isDone)
+        if (!empty($description))
+        {
+            $statement = $this->pdo->prepare(
+                                "INSERT INTO `tasks` (userName, description, isDone)
                                 VALUES (:userName, :description, :done)");
             $statement->execute([
                 "userName" => $userName,
                 "description" => htmlspecialchars(strip_tags($description)), 
                 "done" => 0
-                ]);
+            ]);
         }
+        return;
     }
 
 

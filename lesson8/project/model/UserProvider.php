@@ -49,4 +49,9 @@ class UserProvider
                : null;
     }
 
+    function getAllUsers (): string 
+    {   
+        $statement = $this->pdo->exec("SELECT * FROM `users`");
+        return $statement;
+    }
 }

@@ -15,18 +15,34 @@
     </form>
     <?php if (isset($undoneTasks)) {?>
     <ul>
-    <?php foreach($undoneTasks as $task) {?>
-            <li><?php 
+    <?php foreach($undoneTasks as $task) :?>
+            <li id="<?=$task->getTaskID()?>"><?php 
             if (gettype($task)==="string") {
                             echo $task . ";" ;
                         } else {
                             echo $task->getDescription() .";";
                  ?>
             [<a href="/?controller=tasks&taskID=<?=$task->getTaskID()?>">Сделано!</a>]
+            <button class="doneBtn" data-id="<?=$task->getTaskID()?>">Done</button>
         <?php } ?>
         </li>
-        <?php }?>
+        <?php endforeach;?>
     </ul>
     <?php }?>
+<script>
+    let buttons = document.querySelectorAll('.doneBtn');
+    buttons.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let id = elem.getAttribute('data-id');
+            (
+                async () => {
+                    const response = await fetch('/?controller=tasks&action=apidone&taskID=' + id);
+                    const answer = await response.json();
+                    document.getElementById(answer.taskID).remove();
+                }
+            )();
+        })
+    })
+</script>
 </body>
 </html>

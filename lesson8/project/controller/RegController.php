@@ -20,6 +20,7 @@ if (isset($_POST["userName"])) {
         $userProvider->registerUser($user, htmlspecialchars(strip_tags($_POST["password"])));
         $_SESSION["userName"] = $user;
         header("location: /?controller=security");
+        die();
     }
     catch (LengthException $exception)
     {

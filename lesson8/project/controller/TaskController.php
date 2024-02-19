@@ -2,7 +2,10 @@
 
 include "getUserName.php";
 
-if (!isset($userLogin)) header ("location: /");
+if (!isset($userLogin)) {
+    header ("location: /");
+    die();
+}
 
 $pdo = require "db.php";
 $taskProvider = new TaskProvider($pdo);
@@ -11,8 +14,33 @@ $taskProvider = new TaskProvider($pdo);
 if(isset($_POST["newTask"])){
     $taskProvider->addTask($userLogin, $_POST["newTask"]);
     unset($_POST["newTask"]);
+    header("location: /?controller=tasks");
+    die();
 }
 
+if (isset($_GET["action"]) && $_GET["action"] === "apidone") 
+{
+    $taskId = $_GET["taskID"] ?? null;
+    // $userId = $_SESSION["userID"] ?? null;
+
+    $response = [
+        "status" => "Ok",
+        "taskID" => $taskId
+    ];
+
+    try {
+        $taskProvider->setTaskAsDone($taskId);
+    } catch (TaskAlreadyIsDoneException $e) {
+        $response = [
+            "status" => "error",
+            "error_message" => $e->getMessage(),
+            "taskID" => $taskId
+        ];
+    }
+
+    echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    die();
+}
 
 // Отметка о готовности задачи
 if (isset($_GET["taskID"])){
